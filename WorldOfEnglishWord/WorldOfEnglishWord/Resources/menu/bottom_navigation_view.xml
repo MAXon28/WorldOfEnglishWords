@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+      xmlns:app="http://schemas.android.com/apk/res-auto">
+  <item
+    android:id="@+id/dictionary"
+    android:icon="@drawable/dictionary"
+    android:title="Словарь"/>
+ 
+  <item
+    android:id="@+id/translator"
+    android:icon="@drawable/translator"
+    android:title="Переводчик"/>
+
+  <item
+    android:id="@+id/test"
+    android:icon="@drawable/test"
+    android:title="Тест"/>
+
+  <item
+    android:id="@+id/settings"
+    android:icon="@drawable/settings"
+    android:title="Настройки"/>
+</menu>
