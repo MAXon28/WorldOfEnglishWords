@@ -1,0 +1,38 @@
+
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:orientation="vertical"
+	android:background="#cd4a4c"
+    android:weightSum="1.04"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	tools:context=".TranslatorActivity"
+	android:id="@+id/linearLayout1">
+
+	<android.support.v4.view.ViewPager
+		android:id="@+id/vp_fragments"
+		android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+		android:layout_marginLeft="12dp"
+		android:layout_marginTop="12dp"
+		android:layout_marginRight="12dp"
+		android:layout_marginBottom="3dp"/>
+
+    
+	<Com.ViewPagerIndicator.CirclePageIndicator
+		android:id="@+id/indicator"
+		android:padding="7dip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+		android:layout_marginRight="12dp"
+        android:background="#cd4a4c"
+        app:vpiRadius="5dp"
+        app:vpiFillColor="#012169"
+        app:vpiPageColor="#fff"
+        app:vpiStrokeColor="#fff"
+        app:vpiStrokeWidth="3dp"/>
+</LinearLayout>

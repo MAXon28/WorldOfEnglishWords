@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cd4a4c">
+    <TextView
+        android:id="@+id/tv_count_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="328dp"
+        android:layout_height="267dp"
+        android:layout_below="@+id/tv_count_answers"
+        android:layout_marginTop="67dp"
+        android:layout_centerInParent="true"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="12dp">
+        <android.support.v7.widget.GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:rowCount="2"
+            app:columnCount="1">
+            <TextView
+                android:id="@+id/tv_question"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"
+                app:layout_row="0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Топчик"
+                android:textSize="28sp"
+                android:textColor="#012169"/>
+            <EditText
+                android:id="@+id/et_answer"
+                app:layout_rowWeight="1"
+                app:layout_columnWeight="1"
+                app:layout_row="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:hint="Ваш перевод"
+                android:textSize="28sp"
+                android:textColor="#012169"
+                android:maxLines="1"
+                android:maxLength="19"
+                android:inputType="text"
+                android:backgroundTint="#fff"/>
+        </android.support.v7.widget.GridLayout>
+    </android.support.v7.widget.CardView>
+
+    <Button
+        android:id="@+id/btn_next_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:textColor="#012169"
+        android:background="@drawable/background_test_buttons"
+        android:text="Следующее слово"
+        android:textSize="19dip"
+        android:layout_marginStart="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_marginBottom="28dp"
+        android:elevation="12dp"/>
+</RelativeLayout>

@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cd4a4c">
+    <SearchView
+		android:id="@+id/sv_word_search"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+        android:layout_margin="12dp"
+        android:background="@drawable/background_search"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rv_words"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/sv_word_search"
+        android:layout_above="@+id/btn_ru"
+        android:layout_marginBottom="12dp"
+        android:padding="4dp"/>
+
+    <Button
+        android:id="@+id/btn_start_creating_test"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:background="@drawable/background_start_test_button"
+        android:textColor="#012169"
+        android:text="Начать тест"
+        android:layout_marginBottom="12dp"
+        android:layout_marginLeft="12dp"
+        android:paddingStart="28dp"
+        android:paddingEnd="28dp"
+        android:elevation="12dp"/>
+
+  	<Button
+        android:id="@+id/btn_ru" 
+	    android:text="Ru"
+        android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/btn_en"
+        android:layout_marginRight="0dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:textColor="#012169"
+        android:background="@drawable/background_ru_button"/>
+	<Button
+		android:id="@+id/btn_en"
+		android:text="En"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:layout_alignParentRight="true"
+		android:layout_marginRight="12dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="12dp"
+        android:textColor="#012169"
+        android:background="@drawable/background_en_button"/>
+</RelativeLayout>
