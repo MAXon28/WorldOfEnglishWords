@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cd4a4c">
+    <TextView
+        android:id="@+id/tv_count_game_answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:layout_centerHorizontal="true"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+    <TextView
+        android:id="@+id/tv_count_attempts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/tv_count_game_answers"
+        android:layout_marginTop="67dp"
+        android:textSize="19sp"
+        android:textColor="#fff"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="240dp"
+        card_view:cardElevation="12dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="7dp">
+        <TextView
+            android:id="@+id/tv_word_game"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="5dp"
+            android:textColor="#012169"
+            android:textSize="26sp"
+            android:gravity="center"
+            android:inputType="textMultiLine"/>
+    </android.support.v7.widget.CardView>
+
+    <EditText
+        android:id="@+id/et_word_game"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cv_word"
+        android:layout_marginHorizontal="12dp"
+        android:hint="Введите одну букву или слово"
+        android:textColorHint="#DCDCDC"
+        android:textColor="#fff"
+        android:backgroundTint="#fff"
+        android:textSize="21sp"
+        android:gravity="center"
+        android:inputType="text"
+        android:maxLines="1"/>
+
+    <Button
+        android:id="@+id/btn_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_word_game"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="4dp"
+        android:text="Ввод"
+        android:textSize="16sp"
+        android:textColor="#012169"
+        android:background="@drawable/background_test_buttons"
+        android:padding="12dp"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/btn_next_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="28dp"
+        android:text="Следующее слово"
+        android:textSize="16sp"
+        android:textColor="#012169"
+        android:background="@drawable/background_test_buttons"
+        android:padding="12dp"
+        android:gravity="center"/>
+
+</RelativeLayout>

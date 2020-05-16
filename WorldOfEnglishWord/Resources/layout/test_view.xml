@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:background="#cd4a4c"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+  <Button
+      android:id="@+id/btn_generation"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:background="@drawable/background_test_buttons"
+      android:textColor="#012169"
+      android:text="Сгенерировать тест"
+      android:textSize="19dip"
+      android:layout_margin="28dp"
+      android:elevation="12dp"/>
+
+   <Button
+      android:id="@+id/btn_creating"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:gravity="center"
+      android:background="@drawable/background_test_buttons"
+      android:textColor="#012169"
+      android:text="Составить тест"
+      android:textSize="19dip"
+      android:layout_margin="28dp"
+      android:elevation="12dp"/>
+
+</LinearLayout>

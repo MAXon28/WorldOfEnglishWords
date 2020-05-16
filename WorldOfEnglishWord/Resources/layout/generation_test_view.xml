@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#cd4a4c">
+    <TextView
+        android:id="@+id/tv_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="12dp"
+        android:text="Сгенерировать тест:"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+    <RadioGroup
+        android:id="@+id/rg_type_generation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        android:layout_below="@+id/tv_text">
+        <RadioButton
+            android:id="@+id/rb_only_ru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Только по русским словам"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:buttonTint="#012169"
+            android:layout_marginBottom="5dp"/>
+        <RadioButton
+            android:id="@+id/rb_all_ru"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="По всем русским словам"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:buttonTint="#012169"
+            android:layout_marginBottom="5dp"/>
+        <RadioButton
+            android:id="@+id/rb_only_en"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Только по английским словам"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:buttonTint="#012169"
+            android:layout_marginBottom="5dp"/>
+        <RadioButton
+            android:id="@+id/rb_all_en"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="По всем английским словам"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:buttonTint="#012169"
+            android:layout_marginBottom="5dp"/>
+        <RadioButton
+            android:id="@+id/rb_random"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="По случайным словам"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:buttonTint="#012169"
+            android:layout_marginBottom="5dp"/>
+        <RadioButton
+            android:id="@+id/rb_all"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="По всем словам"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            android:textColor="#fff"
+            android:buttonTint="#012169"/>
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/et_count_words"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rg_type_generation"
+        android:layout_marginRight="55dp"
+        android:layout_marginLeft="28dp"
+        android:hint="Количество слов в тесте"
+        android:textColorHint="#DCDCDC"
+        android:inputType="numberSigned"
+        android:textColor="#fff"
+        android:backgroundTint="#fff"
+        android:textSize="19sp"
+        android:textCursorDrawable="@drawable/color_test_cursor"/>
+
+    <Button
+        android:id="@+id/btn_start_generation_test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="28dp"
+        android:gravity="center"
+        android:background="@drawable/background_save_button"
+        android:textColor="#fff"
+        android:text="Начать тест"
+        android:textSize="19sp"/>
+
+    <TextView
+      android:id="@+id/tv_waiting"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_above="@id/btn_start_generation_test"
+      android:gravity="center"
+      android:textColor="#fff"
+      android:text="Идёт генерация.\nПожалуйста, подождите..."
+      android:textSize="19dp"/>
+</RelativeLayout>
