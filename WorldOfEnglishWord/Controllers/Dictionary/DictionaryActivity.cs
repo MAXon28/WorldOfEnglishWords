@@ -4,6 +4,7 @@ using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Support.V7.Widget.Helper;
 using Android.Views;
+using Android.Views.InputMethods;
 using WorldOfEnglishWord.Adapters;
 using WorldOfEnglishWord.BisnessLogic;
 using SearchView = Android.Widget.SearchView;
@@ -18,11 +19,18 @@ namespace WorldOfEnglishWord.Controllers.Dictionary
         private RecyclerView recyclerView;
         private DictionaryAdapter dictionaryAdapter;
 
+        private MainAppActivity activity;
+
+        public DictionaryActivity(MainAppActivity activity)
+        {
+            this.activity = activity;
+        }
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             wordsLogic = WordsLogic.GetInstance();
-            dictionaryAdapter = new DictionaryAdapter(wordsLogic);
+            dictionaryAdapter = new DictionaryAdapter(wordsLogic, activity);
             wordsLogic.LoadStatistics();
         }
 

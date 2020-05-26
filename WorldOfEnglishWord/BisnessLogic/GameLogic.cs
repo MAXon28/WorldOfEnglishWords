@@ -24,11 +24,11 @@ namespace WorldOfEnglishWord.BisnessLogic
 
         public (string[], string[]) GetWordsForGame()
         {
-            string[] fullWords = new string[5];
-            string[] clippedWords = new string[5];
             List<string> enList = WordsLogic.GetInstance().GetEnAllWords();
             int index = 0;
             int maxWords = enList.Count >= 5 ? 5 : enList.Count;
+            string[] fullWords = new string[maxWords];
+            string[] clippedWords = new string[maxWords];
             while (index != maxWords)
             {
                 string word = enList[new Random().Next(0, enList.Count)];

@@ -11,7 +11,7 @@ using WorldOfEnglishWord.Controllers.Translate;
 namespace WorldOfEnglishWord.Controllers
 {
     [Activity(Label = "MainAppActivity", ScreenOrientation = ScreenOrientation.Portrait)]
-    class MainAppActivity : AppCompatActivity
+    public class MainAppActivity : AppCompatActivity
     {
         private Android.Support.V4.App.Fragment view;
         private int id;
@@ -64,7 +64,7 @@ namespace WorldOfEnglishWord.Controllers
             switch (id)
             {
                 case Resource.Id.dictionary:
-                    view = new DictionaryActivity();
+                    view = new DictionaryActivity(this);
                     break;
                 case Resource.Id.translator:
                     view = new TranslatorActivity();

@@ -105,6 +105,7 @@ namespace WorldOfEnglishWord.Controllers.Test
 
                 Dialog zeroWordsDialog = alert.Create();
                 zeroWordsDialog.Show();
+                zeroWordsDialog.SetCanceledOnTouchOutside(false);
             }
             else
             {

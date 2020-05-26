@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using WorldOfEnglishWord.Adapters;
 
 namespace WorldOfEnglishWord.Controllers.Cards
 {

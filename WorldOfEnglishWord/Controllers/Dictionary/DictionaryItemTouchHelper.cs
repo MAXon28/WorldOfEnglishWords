@@ -49,6 +49,7 @@ namespace WorldOfEnglishWord.Controllers.Dictionary
 
             Dialog dialog = alert.Create();
             dialog.Show();
+            dialog.SetCanceledOnTouchOutside(false);
         }
     }
 }

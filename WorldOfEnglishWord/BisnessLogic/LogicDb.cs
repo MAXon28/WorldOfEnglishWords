@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -21,7 +20,6 @@ namespace WorldOfEnglishWord.BisnessLogic
 
         public List<Word> GetWords()
         {
-            //dataBase.DeleteAll<Word>();
             dataBase.CreateTable<Word>();
             List<Word> checkWords = dataBase.Table<Word>().Any() ? dataBase.Table<Word>().ToList() : null;
             if (checkWords == null)

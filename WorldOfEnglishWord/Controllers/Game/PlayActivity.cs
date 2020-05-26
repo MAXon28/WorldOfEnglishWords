@@ -5,6 +5,7 @@ using Android.OS;
 using Android.Views;
 using Android.Widget;
 using Newtonsoft.Json;
+using System;
 using WorldOfEnglishWord.BisnessLogic;
 
 namespace WorldOfEnglishWord.Controllers.Game
@@ -73,12 +74,7 @@ namespace WorldOfEnglishWord.Controllers.Game
 
             alert.SetPositiveButton("Да", (senderAlert, args) =>
             {
-                gameLogic.Game.AllGames += 1;
-                gameLogic.Game.NumberOfPoints += points;
-                gameLogic.UpdateDataGameAsync();
-
                 EndGame();
-                Finish();
             });
 
             alert.SetNegativeButton("Нет", (senderAlert, args) =>
@@ -170,7 +166,7 @@ namespace WorldOfEnglishWord.Controllers.Game
         {
             ButtonsSetting(false);
 
-            if (index != 4)
+            if (index != fullWords.Length - 1)
             {
                 index++;
                 countAttempts = 5;
@@ -178,23 +174,19 @@ namespace WorldOfEnglishWord.Controllers.Game
                 textViewCountGameAnswers.Text = $"{index + 1}/{fullWords.Length}";
                 textViewCountAttempts.Text = $"Осталось попыток: {countAttempts}";
                 textViewWord.Text = clippedWords[index];
+                editTextInputForWord.Text = "";
 
                 ButtonsSetting(true);
                 buttonInput.Visibility = ViewStates.Visible;
                 editTextInputForWord.Visibility = ViewStates.Visible;
-                if (index == 4)
+                if (index == fullWords.Length - 1)
                 {
                     buttonNextWord.Text = "Завершить игру";
                 }
             }
             else
             {
-                gameLogic.Game.AllGames += 1;
-                gameLogic.Game.NumberOfPoints += points;
-                gameLogic.UpdateDataGameAsync();
-
                 EndGame();
-                Finish();
             }
         }
 
@@ -209,14 +201,39 @@ namespace WorldOfEnglishWord.Controllers.Game
             AlertDialog.Builder alert = new AlertDialog.Builder(this);
 
             alert.SetTitle("Конец игры");
-            alert.SetMessage($"За эту игру Вы набрали {points} очков!");
+            int units = Convert.ToInt32(points.ToString()[points.ToString().Length - 1].ToString());
+            int dozen = 0;
+            if (points.ToString().Length > 1)
+            {
+                dozen = Convert.ToInt32(points.ToString()[points.ToString().Length - 2].ToString());
+            }
+            if (units == 0 || units >= 5 || dozen == 1)
+            {
+                alert.SetMessage($"За эту игру Вы набрали {points} очков!");
+            }
+            else if (units >= 2 && units < 5)
+            {
+                alert.SetMessage($"За эту игру Вы набрали {points} очка!");
+            }
+            else
+            {
+                alert.SetMessage($"За эту игру Вы набрали {points} очко!");
+            }
+            
 
             alert.SetPositiveButton("Ок", (senderAlert, args) =>
             {
+                gameLogic.Game.AllGames += 1;
+                gameLogic.Game.NumberOfPoints += points;
+                gameLogic.UpdateDataGameAsync();
+
+                Finish();
             });
 
             Dialog dialogEndGame = alert.Create();
             dialogEndGame.Show();
+
+            ButtonsSetting(true);
         }
     }
 }

@@ -83,6 +83,7 @@ namespace WorldOfEnglishWord.Controllers.Game
 
             Dialog dialogEndTest = alert.Create();
             dialogEndTest.Show();
+            dialogEndTest.SetCanceledOnTouchOutside(false);
         }
 
         private async void PlayAsync()

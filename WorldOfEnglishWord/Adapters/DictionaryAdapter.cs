@@ -1,22 +1,30 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Contexts;
 using System.Threading.Tasks;
+using Android.App;
 using Android.Content;
+using Android.OS;
 using Android.Support.V7.Widget;
 using Android.Views;
+using Android.Views.InputMethods;
 using Android.Widget;
 using WorldOfEnglishWord.BisnessLogic;
+using WorldOfEnglishWord.Controllers;
 using WorldOfEnglishWord.Controllers.Cards;
+using Context = Android.Content.Context;
 
 namespace WorldOfEnglishWord.Adapters
 {
     public class DictionaryAdapter : RecyclerView.Adapter
     {
         private WordsLogic wordsLogic;
+        private MainAppActivity activity;
 
-        public DictionaryAdapter(WordsLogic wordsLogic)
+        public DictionaryAdapter(WordsLogic wordsLogic, MainAppActivity activity)
         {
             this.wordsLogic = wordsLogic;
+            this.activity = activity;
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
@@ -29,7 +37,7 @@ namespace WorldOfEnglishWord.Adapters
         {
             Context context = parent.Context;
             View view = LayoutInflater.From(context).Inflate(Resource.Layout.dictionary_word_view, parent, false);
-            return new MyDictionaryViewHolder(view, context);
+            return new MyDictionaryViewHolder(view, context, activity);
         }
 
         public override int ItemCount => wordsLogic.GetCount();
@@ -55,12 +63,14 @@ namespace WorldOfEnglishWord.Adapters
         private readonly TextView textViewEn;
         private readonly WordsLogic wordsLogic;
         private Context context;
+        private MainAppActivity activity;
 
-        public MyDictionaryViewHolder(View itemView, Context context) : base(itemView)
+        public MyDictionaryViewHolder(View itemView, Context context, MainAppActivity activity) : base(itemView)
         {
             textViewRu = itemView.FindViewById<TextView>(Resource.Id.tv_ru);
             textViewEn = itemView.FindViewById<TextView>(Resource.Id.tv_en);
             this.context = context;
+            this.activity = activity;
             wordsLogic = WordsLogic.GetInstance();
             textViewRu.Click += ItemRu_Click;
             textViewEn.Click += ItemEn_Click;
@@ -76,12 +86,14 @@ namespace WorldOfEnglishWord.Adapters
         {
             SettingClick(false);
             StartCardActivityAsync("ru");
+            Utils.HideKeyboard(activity);
         }
 
         private void ItemEn_Click(object sender, EventArgs e)
         {
             SettingClick(false);
             StartCardActivityAsync("en");
+            Utils.HideKeyboard(activity);
         }
 
         private async void StartCardActivityAsync(string language)
@@ -98,6 +110,22 @@ namespace WorldOfEnglishWord.Adapters
         {
             textViewRu.Enabled = isEnabled;
             textViewEn.Enabled = isEnabled;
+        }
+    }
+
+    public static class Utils
+    {
+        public static void HideKeyboard(Activity context)
+        {
+            var imm = (InputMethodManager)context.GetSystemService(Context.InputMethodService);
+            try
+            {
+                imm.HideSoftInputFromWindow(context.CurrentFocus.WindowToken, HideSoftInputFlags.NotAlways);
+            }
+            catch (Exception)
+            {
+                // empty
+            }
         }
     }
 }

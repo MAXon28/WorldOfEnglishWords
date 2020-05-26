@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="WorldOfEnglishWord.Controllers.MainAppActivity">
+    <Position X="7" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>EBAAAAAAAAAAAAgAAAAAAAAAACAAAAAAAQAAgAAABgA=</HashCode>
+      <FileName>Controllers\MainAppActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldOfEnglishWord.BisnessLogic.WordsLogic">
+    <Position X="4.25" Y="0.75" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>gCeAAABAEAACgQFAAiAEQAAABACIAEEQAAEAAAEEwAA=</HashCode>
+      <FileName>BisnessLogic\WordsLogic.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldOfEnglishWord.BisnessLogic.LogicDb">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAgAAAAEBAAAAEAgAAAAAAEAAAAAAAEAAIAAAAA=</HashCode>
+      <FileName>BisnessLogic\LogicDb.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldOfEnglishWord.Models.Word">
+    <Position X="1.25" Y="4.25" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAACCBAAAQAABAAAAAAAQAAAAAAAAAAAAAAAAAACAAA=</HashCode>
+      <FileName>Models\Word.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldOfEnglishWord.Models.Game">
+    <Position X="2.25" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Models\Game.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WorldOfEnglishWord.Translator.TranslatorApi">
+    <Position X="7.5" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAACAAAACEGAAAAAAgAAAAAIAAAAgAAAAA=</HashCode>
+      <FileName>Translator\TranslatorApi.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
